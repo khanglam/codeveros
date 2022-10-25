@@ -13,10 +13,10 @@
 
 // Scripted/Imperative
 node {
-    checkout scm
     stage('Clean Up') {
         cleanWs()
     }
+    checkout scm
     dir('services/ui/angular') {
         stage('Dependencies') {
             docker.image('node:14.16').inside{
