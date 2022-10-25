@@ -42,6 +42,15 @@ node {
             }
         }
         */
+        stage('Deliver') {
+            if(evn.BRANCH_NAME=='master'){
+                docker.withRegistry('', 'dockerhub') {
+                    def myImage = docker.build("khangtlam/ui:${env.BUILD_ID}")
+                    myImage.push()
+                    myImage.push('latest')
+                }
+            }
+        }
     }
     
 }
