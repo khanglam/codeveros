@@ -18,7 +18,7 @@ node {
     }
     checkout scm
     dir('services/ui/angular') {
-        stage('Dependencies') {
+        /*stage('Dependencies') {
             docker.image('node:14.16').inside{
                 sh 'npm ci --quiet --cache="./npm"'
             }
@@ -28,7 +28,7 @@ node {
                 sh 'npm run build.production --cache="./npm"'
             }
         }
-        /*
+        
         stage('Lint'){
             try {
                 echo 'linting'
