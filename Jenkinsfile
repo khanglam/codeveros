@@ -13,7 +13,15 @@
 
 // Scripted/Imperative
 node {
+    checkout
     stage('Build'){
         echo 'Hello World From Imperative'
+    }
+    stage('lint'){
+        try {
+            echo 'linting'
+        } catch (Exception e) {
+            echo 'Failed linting ' + e.toString()
+        }
     }
 }
