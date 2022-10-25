@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                echo 'Hello World, this is Khang'
+                echo 'Hello World, this is Khang - testing autobuild'
             }
         }
     }
